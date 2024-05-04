@@ -10,7 +10,7 @@ import { UsersController } from './users/users.controller';
   imports: [
     ClientsModule.register([
       {
-        name: 'USER_SERVICE',
+        name: 'BROKER',
         transport: Transport.REDIS,
         options: {
           host: process.env.REDIS_HOST || 'redis',

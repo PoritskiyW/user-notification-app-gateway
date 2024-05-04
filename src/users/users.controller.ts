@@ -11,12 +11,12 @@ import CreateUserDto from './dto/create-user.dto';
 @Controller('users')
 export class UsersController {
   constructor(
-    @Inject('USER_SERVICE')
-    private readonly userService: ClientProxy,
+    @Inject('BROKER')
+    private readonly broker: ClientProxy,
   ) {}
 
   @Post()
   async create(@Body() userData: CreateUserDto) {
-    return this.userService.send('create_user', userData);
+    return this.broker.send('create_user', userData);
   }
 }
