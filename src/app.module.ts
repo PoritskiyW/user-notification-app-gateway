@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Logger, Module } from '@nestjs/common';
 import {
   Transport,
   ClientsModule,
@@ -20,6 +20,6 @@ import { UsersController } from './users/users.controller';
     ]),
   ],
   controllers: [UsersController],
-  providers: [],
+  providers: [Logger],
 })
 export class AppModule {}
